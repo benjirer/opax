@@ -9,7 +9,7 @@ required = [
     'matplotlib>=3.5.1',
     'numpy==1.24.2',
     'optax==0.1.4',
-    'scipy<=1.10.1',
+    'scipy',
     'wandb>=0.12.11',
     'termcolor>=1.1.0',
     'distrax==0.1.2',
