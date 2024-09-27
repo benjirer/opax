@@ -3,7 +3,7 @@
 from setuptools import setup, find_packages
 
 required = [
-    'flax==0.6.8',
+    'flax',
     'jax',
     'jaxlib',
     'matplotlib>=3.5.1',
