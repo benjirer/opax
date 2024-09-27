@@ -42,7 +42,7 @@ def _calculate_calibration_alpha(calibration_error_fn: Callable, params: PyTree,
 
 
 def _predict(apply_fn: Callable, params: PyTree, x: chex.Array, sig_max: Union[chex.Array, float],
-             sig_min: Union[chex.Array, float], rng: Optional[jax.random.PRNGKeyArray] = None,
+             sig_min: Union[chex.Array, float], rng: Optional[jax.random.key(0)] = None,
              deterministic: bool = False) -> chex.Array:
     """Predict next mean and aleatoric std."""
     forward = jax.vmap(apply_fn, (0, None))

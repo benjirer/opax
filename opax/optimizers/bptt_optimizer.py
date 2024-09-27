@@ -495,7 +495,7 @@ class BPTTOptimizer(DummyPolicyOptimizer):
 
     @functools.partial(jax.jit, static_argnums=(0, 6))
     def train_single_agent(self,
-                           rng: jax.random.PRNGKeyArray,
+                           rng: jax.random.key(0),
                            true_obs: jax.Array,
                            obs_size: jax.Array,
                            bptt_state: BPTTState,

@@ -149,7 +149,7 @@ class ModelBasedAgent(DummyAgent):
 
         self.step = jax.jit(step)
 
-    def act_in_jax(self, obs: jax.Array, rng: jax.random.PRNGKeyArray, eval: bool = False, eval_idx: int = 0):
+    def act_in_jax(self, obs: jax.Array, rng: jax.random.key(0), eval: bool = False, eval_idx: int = 0):
         # forward pass through policy if policy optimizer is SAC
         if isinstance(self.policy_optimizer, SACOptimizer):
             if eval:
@@ -194,14 +194,14 @@ class ModelBasedAgent(DummyAgent):
         return action
 
     def train_step(self,
-                   rng: jax.random.PRNGKeyArray,
+                   rng: jax.random.key(0),
                    buffer: ReplayBuffer,
                    validate: bool = True,
                    log_results: bool = True,
                    ) -> int:
         """
         Training of model based agent
-        :param rng: jax.random.PRNGKeyArray, random key
+        :param rng: jax.random.key(0), random key
         :param buffer: ReplayBuffer, buffer of collected transition
         :param validate: bool, boolean for validating model
         :param log_results: bool, boolean to indicate logging of training results.
