@@ -5,7 +5,7 @@ from setuptools import setup, find_packages
 required = [
     'flax==0.6.8',
     'jax==0.4.31',
-    'jaxlib==0.4.7',
+    'jaxlib==0.4.31',
     'matplotlib>=3.5.1',
     'numpy==1.24.2',
     'optax==0.1.4',
